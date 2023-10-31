@@ -5,13 +5,13 @@
  * un conjunto de casos distintos. TypeScript proporciona
  * enumeraciones tanto numéricas como basadas en cadenas.
  */
-enum ROLES {
+export enum ROLES {
   ADMIN = 'Administrador',
   SELLER = 'Vendedor',
   CUSTOMER = 'Cliente',
 }
 
-type User = {
+export type User = {
   username: string;
   role: ROLES;
 };
