@@ -8,5 +8,6 @@ addProduct({
   category: {
     id: 123,
     name: 'ropa',
+    createdAt: new Date(),
   },
 });
