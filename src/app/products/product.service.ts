@@ -1,8 +1,6 @@
 import { faker } from '@faker-js/faker';
-import { CreateProductDto } from './product.dto';
+import { CreateProductDto, UpdateProductDto } from './product.dto';
 import { Product } from './product.model';
-
-type uuid = number | string;
 
 export const products: Product[] = [];
 
@@ -23,11 +21,20 @@ export const addProduct = (data: CreateProductDto): Product => {
   return newProduct;
 };
 
-export const updateProduct = (id: uuid, chages: Product) => {
-  // Code
+export const updateProduct = (
+  id: string,
+  changes: UpdateProductDto
+): Product => {
+  const index = products.findIndex((item) => item.id === id);
+  const prevData = products[index];
+  products[index] = {
+    ...prevData,
+    ...changes,
+  };
+  return products[index];
 };
 
-export const removeProduct = (id: uuid) => {
+export const removeProduct = (id: string) => {
   // Code
 };
 
@@ -35,6 +42,6 @@ export const getProducts = (): Product[] => {
   return products;
 };
 
-export const getProduct = (id: uuid) => {
+export const getProduct = (id: string) => {
   // Code
 };

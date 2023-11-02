@@ -14,3 +14,15 @@ export interface CreateProductDto
  * con las propiedades que se especifican en el Picl
  */
 type example = Pick<Product, 'color' | 'description'>;
+
+/**
+ * El Partial realiza la herencia, pero todas las propiedades se vuelven
+ * opcionales.
+ */
+export interface UpdateProductDto extends Partial<CreateProductDto> {}
+
+/**
+ * Required es el contrario de Partial. Hace la herencia pero deja todas
+ * las propiedades como obligatorias
+ */
+type example2 = Required<Product>;

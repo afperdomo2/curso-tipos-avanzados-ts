@@ -1,6 +1,11 @@
 import { faker } from '@faker-js/faker';
 
-import { addProduct, getProducts } from './products/product.service';
+import {
+  addProduct,
+  updateProduct,
+  getProducts,
+  products,
+} from './products/product.service';
 
 for (let index = 0; index < 10; index++) {
   addProduct({
@@ -18,3 +23,11 @@ for (let index = 0; index < 10; index++) {
 }
 
 console.info('Products:', getProducts());
+
+const product = products[0];
+const updatedProduct = updateProduct(product.id, {
+  title: 'Camisa manga larga',
+  color: 'red',
+  isNew: false,
+});
+console.info('updatedProduct:', updatedProduct);
