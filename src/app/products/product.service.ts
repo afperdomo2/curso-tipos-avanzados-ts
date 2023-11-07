@@ -26,7 +26,7 @@ export const addProduct = (data: CreateProductDto): Product => {
 };
 
 export const updateProduct = (
-  id: string,
+  id: Product['id'],
   changes: UpdateProductDto
 ): Product => {
   const index = products.findIndex((item) => item.id === id);
@@ -38,7 +38,7 @@ export const updateProduct = (
   return products[index];
 };
 
-export const removeProduct = (id: string) => {
+export const removeProduct = (id: Product['id']) => {
   // Code
 };
 
@@ -46,7 +46,7 @@ export const getProducts = (): Product[] => {
   return products;
 };
 
-export const getProduct = (id: string) => {
+export const getProduct = (id: Product['id']) => {
   // Code
 };
 
