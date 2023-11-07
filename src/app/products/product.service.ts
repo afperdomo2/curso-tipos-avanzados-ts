@@ -51,5 +51,9 @@ export const getProduct = (id: Product['id']) => {
 };
 
 export const findProducts = (filters: FindProductDto): Product[] => {
+  // filters.tags = [];
+
+  // filters.tags?.pop();
+  // filters.tags?.push(999);
   return products;
 };

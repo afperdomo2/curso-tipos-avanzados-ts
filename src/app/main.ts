@@ -33,5 +33,9 @@ const updatedProduct = updateProduct(product.id, {
 });
 console.info('updatedProduct:', updatedProduct);
 
-const findedProducts = findProducts({ stock: 10, color: 'red' });
+const findedProducts = findProducts({
+  stock: 10,
+  color: 'red',
+  tags: [1, 2, 'nuevo'],
+});
 console.info('findedProducts:', findedProducts);

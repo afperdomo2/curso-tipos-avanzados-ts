@@ -29,5 +29,19 @@ type example2 = Required<Product>;
 
 /**
  * Convierte las propiedades del DTO en solo lectura (readonly)
+ *
+ * Omite los tags, para realizar una modificación
  */
-export interface FindProductDto extends Readonly<Partial<Product>> {}
+export interface FindProductDto
+  extends Readonly<Partial<Omit<Product, 'tags'>>> {
+  /**
+   * readonly se usa para que no se pueda reasignar el array,
+   * ejemplo: tags = []
+   *
+   * ReadonlyArray, se usa para que no se pueda mutar con métodos
+   *
+   * Con estos 2 cambios, el array ya se vuelve completamente de
+   * solo lectura
+   */
+  readonly tags: ReadonlyArray<number | string>;
+}
