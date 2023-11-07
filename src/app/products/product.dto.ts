@@ -26,3 +26,8 @@ export interface UpdateProductDto extends Partial<CreateProductDto> {}
  * las propiedades como obligatorias
  */
 type example2 = Required<Product>;
+
+/**
+ * Convierte las propiedades del DTO en solo lectura (readonly)
+ */
+export interface FindProductDto extends Readonly<Partial<Product>> {}

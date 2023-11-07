@@ -5,6 +5,7 @@ import {
   updateProduct,
   getProducts,
   products,
+  findProducts,
 } from './products/product.service';
 
 for (let index = 0; index < 10; index++) {
@@ -31,3 +32,6 @@ const updatedProduct = updateProduct(product.id, {
   isNew: false,
 });
 console.info('updatedProduct:', updatedProduct);
+
+const findedProducts = findProducts({ stock: 10, color: 'red' });
+console.info('findedProducts:', findedProducts);
