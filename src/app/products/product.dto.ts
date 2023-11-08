@@ -11,7 +11,7 @@ export interface CreateProductDto
 
 /**
  * Pick es el contrario del Omit, crea un tipo o una interfaz únicamente
- * con las propiedades que se especifican en el Picl
+ * con las propiedades que se especifican en el Pick
  */
 type example = Pick<Product, 'color' | 'description'>;
 
